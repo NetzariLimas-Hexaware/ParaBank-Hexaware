@@ -3,6 +3,7 @@ package Hexaware.data;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -27,8 +28,10 @@ public class DataReader {
 //			System.out.println(rowCount-1);
 			row = sheet.getRow(i+1);
 			for(int j=0;j<columnCount;j++) {
-				XSSFCell cell = row.getCell(j);				
-				data[i][j] = formatter.formatCellValue(cell);
+				XSSFCell cell = row.getCell(j);	
+				cell.setCellType(CellType.STRING);
+//				data[i][j] = formatter.formatCellValue(cell); // This don't evaluate cells with formula
+				data[i][j] = cell.getStringCellValue();
 //				System.out.println(data[i][j]);
 			}
 		}

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Hexaware.tests.UserRegistration">
+      <class name="Hexaware.tests.UserOpenAccountProcess">
         <methods>
           <include name="launchingApplication"/>
-          <include name="userCreateOpenAccount" invocation-numbers="0 1"/>
+          <include name="RegressionUserProcess"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- Hexaware.tests.UserRegistration -->
+      </class> <!-- Hexaware.tests.UserOpenAccountProcess -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
