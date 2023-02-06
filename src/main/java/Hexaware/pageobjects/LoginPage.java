@@ -40,7 +40,11 @@ public class LoginPage extends AbstractComponent {
 		return new RegisterAccount(driver);
 	}
 	
-	public OverviewPage loginApp(String username, String password) {
+	public OverviewPage loginApp(String username, String password, boolean regression) {
+		if(regression) {
+			return new OverviewPage(driver);
+		}
+		
 		userNameInput.sendKeys(username);
 		passwordInput.sendKeys(password);
 		loginButton.click();
